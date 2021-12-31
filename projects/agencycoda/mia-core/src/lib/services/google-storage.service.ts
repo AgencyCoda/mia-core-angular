@@ -24,12 +24,12 @@ export class GoogleStorageService {
 
   public uploadFile(file: File): Observable<any> {
     var d = new Date();
-    return this.http.post<any>( 'https://storage.googleapis.com/upload/storage/v1/b/' + this.config.bucket + '/o?uploadType=media&name=' + d.getMilliseconds() + '_' + d.getFullYear() + d.getMonth() + d.getDay() + d.getHours() + '_' + file.name, file);
+    return this.http.post<any>( 'https://storage.googleapis.com/upload/storage/v1/b/' + this.config.bucket + '/o?uploadType=media&name=' + d.getMilliseconds() + '_' + d.getFullYear() + d.getMonth() + d.getDay() + d.getHours() + '_' + file.name.replace(/ /g, ""), file);
   }
 
   public uploadDirect(file: File): Observable<MiaResponse<MiaFile>> {
     var d = new Date();
-    return this.http.post<any>( 'https://storage.googleapis.com/upload/storage/v1/b/' + this.config.bucket + '/o?uploadType=media&name=' + d.getMilliseconds() + '_' + d.getFullYear() + d.getMonth() + d.getDay() + d.getHours() + '_' + file.name, file).pipe(map(data => {
+    return this.http.post<any>( 'https://storage.googleapis.com/upload/storage/v1/b/' + this.config.bucket + '/o?uploadType=media&name=' + d.getMilliseconds() + '_' + d.getFullYear() + d.getMonth() + d.getDay() + d.getHours() + '_' + file.name.replace(/ /g, ""), file).pipe(map(data => {
       return {
         success: true,
         response: {
@@ -45,7 +45,7 @@ export class GoogleStorageService {
   public uploadWithProgressDirect(file: File): Observable<any> {
     var d = new Date();
 
-    return this.http.post<any>( 'https://storage.googleapis.com/upload/storage/v1/b/' + this.config.bucket + '/o?uploadType=media&name=' + d.getMilliseconds() + '_' + d.getFullYear() + d.getMonth() + d.getDay() + d.getHours() + '_' + file.name, file, {
+    return this.http.post<any>( 'https://storage.googleapis.com/upload/storage/v1/b/' + this.config.bucket + '/o?uploadType=media&name=' + d.getMilliseconds() + '_' + d.getFullYear() + d.getMonth() + d.getDay() + d.getHours() + '_' + file.name.replace(/ /g, ""), file, {
       reportProgress: true,
       observe: "events"
     });
