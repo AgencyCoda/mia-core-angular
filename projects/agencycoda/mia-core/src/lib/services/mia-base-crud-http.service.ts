@@ -61,6 +61,11 @@ export class MiaBaseCrudHttpService<T> extends MiaBaseHttpService {
     return this.post(this.basePathUrl + '/list', data);
   }
 
+  listObWithExtras(query: MiaQuery, moreParams: any): Observable<MiaPagination<T>> {
+    let data = {...query.toParams(), ...moreParams};
+    return this.postOb(this.basePathUrl + '/list', data);
+  }
+
   remove(itemId: number): Promise<boolean> {
     return this.delete(this.basePathUrl + '/remove/' + itemId);
   }
