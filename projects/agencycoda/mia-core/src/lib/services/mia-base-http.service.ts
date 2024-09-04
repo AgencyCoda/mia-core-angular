@@ -18,13 +18,13 @@ export class MiaBaseHttpService {
       this.http.post<MiaResponse<T>>(url, params)
       .toPromise()
       .then(result => {
-        if (result.success) {
+        if (result?.success) {
           resolve(result.response);
         } else {
           console.log('MIA Core Error - URL: ' + url);
           console.log('MIA Core Error - Params: ');
           console.log(params);
-          reject(result.error);
+          reject(result?.error);
         }
       })
       .catch(error => {
@@ -57,12 +57,12 @@ export class MiaBaseHttpService {
       this.http.get<MiaResponse<T>>(url)
       .toPromise()
       .then(result => {
-        if (result.success) {
+        if (result?.success) {
           resolve(result.response);
         } else {
           console.log('MIA Core Error - URL: ' + url);
           console.log('MIA Core Error - Params None');
-          reject(result.error);
+          reject(result?.error);
         }
       })
       .catch(error => {
@@ -93,12 +93,12 @@ export class MiaBaseHttpService {
       this.http.delete<MiaResponse<T>>(url)
       .toPromise()
       .then(result => {
-        if (result.success) {
+        if (result?.success) {
           resolve(result.response);
         } else {
           console.log('MIA Core Error - URL: ' + url);
           console.log('MIA Core Error - Params None');
-          reject(result.error);
+          reject(result?.error);
         }
       })
       .catch(error => {

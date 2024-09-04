@@ -43,3 +43,4 @@ export * from './lib/directives/file-drag-and-drop.directive';
 export * from './lib/rx/mia-operators';
 
 export * from './lib/mia-core.module';
+export * from './lib/mia-core.component';
