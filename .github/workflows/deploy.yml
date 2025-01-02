@@ -36,4 +36,4 @@ jobs:
         with:
           token: ${{ secrets.NPM_TOKEN }}
           access: public
-          package: ./dist/agencycoda/mia-finder/
+          package: dist/agencycoda/mia-finder/
