@@ -28,9 +28,9 @@ export class MiaBaseHttpService {
       throw result.error;
     }))
     .pipe(catchError((err, caught) => {
-      console.log('MIA Core Error - URL: ' + url);
-      console.log('MIA Core Error - Params: ');
-      console.log(params);
+      // console.log('MIA Core Error - URL: ' + url);
+      // console.log('MIA Core Error - Params: ');
+      // console.log(params);
       throw err;
     }));
   }
@@ -48,8 +48,8 @@ export class MiaBaseHttpService {
       throw result.error;
     }))
     .pipe(catchError((err, caught) => {
-      console.log('MIA Core Error - URL: ' + url);
-      console.log('MIA Core Error - Params None');
+      // console.log('MIA Core Error - URL: ' + url);
+      // console.log('MIA Core Error - Params None');
       throw err;
     }));
   }
@@ -67,8 +67,8 @@ export class MiaBaseHttpService {
       throw result.error;
     }))
     .pipe(catchError((err, caught) => {
-      console.log('MIA Core Error - URL: ' + url);
-      console.log('MIA Core Error - Params None');
+      // console.log('MIA Core Error - URL: ' + url);
+      // console.log('MIA Core Error - Params None');
       throw err;
     }));
   }
