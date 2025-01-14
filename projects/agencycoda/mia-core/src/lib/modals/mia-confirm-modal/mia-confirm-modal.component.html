@@ -1,9 +1,13 @@
-<div class="confirmation-modal">
+<div mat-dialog-title>
     <h3> {{ config.title }} </h3>
-    <p [innerHTML]="config.caption"></p>
-    <br>
-    
-    <div class="buttons" style="display: flex; align-items: center;">
-        <button *ngFor="let button of config.buttons" mat-button (click)="onClick(button.value)">{{ button.title }}</button>
-    </div>
 </div>
+
+<mat-dialog-content>
+	<div class="padding_top_xl padding_bottom_m overflow_hidden">
+		<p class="margin_auto text_align_center" [innerHTML]="config.caption"></p>
+	</div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+    <button *ngFor="let button of config.buttons" mat-button (click)="onClick(button.value)">{{ button.title }}</button>
+</mat-dialog-actions>

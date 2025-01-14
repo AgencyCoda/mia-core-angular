@@ -7,8 +7,8 @@ import { MiaConfirmModalComponent } from './modals/mia-confirm-modal/mia-confirm
 import { FileDragAndDropDirective } from './directives/file-drag-and-drop.directive';
 
 /** ANGULAR MATERIAL */
-import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 
 
